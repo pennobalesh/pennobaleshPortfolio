@@ -15,18 +15,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a href="#hero" class="nav-logo">PN</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"></button>
+      </div>
     </nav>
   </header>
 
@@ -224,10 +232,11 @@
       <h2 class="section-title">Contact</h2>
       <p class="contact-intro">Open to new opportunities and collaborations. Reach out via email, phone, or LinkedIn.</p>
       <div class="contact-links">
-        <a href="mailto:luckypenna143@gmail.com" class="contact-link" aria-label="Email">
+        <button type="button" class="contact-link contact-link-email" data-copy="luckypenna143@gmail.com" aria-label="Copy email address">
           <span class="contact-icon" aria-hidden="true">✉</span>
-          luckypenna143@gmail.com
-        </a>
+          <span class="contact-link-text">luckypenna143@gmail.com</span>
+          <span class="contact-copy-done" aria-live="polite">Copied!</span>
+        </button>
         <a href="tel:+918105449689" class="contact-link" aria-label="Phone">
           <span class="contact-icon" aria-hidden="true">📞</span>
           +91 8105449689
@@ -244,6 +253,10 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> Pennobalesh N. Senior Java Full-Stack Developer.</p>
   </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <span aria-hidden="true">↑</span>
+  </button>
 
   <script src="script.js"></script>
 </body>
